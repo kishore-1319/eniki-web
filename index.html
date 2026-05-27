@@ -1,60 +1,172 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Sample Web Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Portfolio</title>
 
-    <style>
-        body{
-            font-family: Arial;
-            background-color: #f2f2f2;
-            text-align: center;
-        }
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
 
-        .container{
-            width: 400px;
-            margin: 50px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px gray;
-        }
+    body{
+      background:#f4f4f4;
+      color:#333;
+    }
 
-        button{
-            background-color: blue;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+    header{
+      background:#111827;
+      color:white;
+      padding:20px 50px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
 
-        button:hover{
-            background-color: darkblue;
-        }
-    </style>
+    header h1{
+      font-size:28px;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin-left:20px;
+      font-size:16px;
+    }
+
+    nav a:hover{
+      color:#38bdf8;
+    }
+
+    .hero{
+      height:90vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      text-align:center;
+      background:linear-gradient(to right,#0f172a,#1e293b);
+      color:white;
+    }
+
+    .hero h2{
+      font-size:50px;
+      margin-bottom:15px;
+    }
+
+    .hero p{
+      font-size:20px;
+      margin-bottom:25px;
+    }
+
+    .btn{
+      padding:12px 25px;
+      background:#38bdf8;
+      color:white;
+      text-decoration:none;
+      border-radius:5px;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#0284c7;
+    }
+
+    .services{
+      padding:60px 50px;
+      text-align:center;
+    }
+
+    .services h2{
+      margin-bottom:40px;
+      font-size:35px;
+    }
+
+    .cards{
+      display:flex;
+      justify-content:center;
+      gap:25px;
+      flex-wrap:wrap;
+    }
+
+    .card{
+      background:white;
+      width:300px;
+      padding:25px;
+      border-radius:10px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+    }
+
+    .card h3{
+      margin-bottom:15px;
+      color:#0f172a;
+    }
+
+    footer{
+      background:#111827;
+      color:white;
+      text-align:center;
+      padding:20px;
+      margin-top:40px;
+    }
+  </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <h1>Welcome</h1>
+  <header>
+    <h1>My Portfolio</h1>
 
-        <p>This is a sample HTML webpage.</p>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
 
-        <img src="https://via.placeholder.com/200" alt="Sample Image">
+  <section class="hero">
+    <h2>Hello, I'm a Web Developer</h2>
+    <p>I create modern and responsive websites</p>
 
-        <br><br>
+    <a href="#" class="btn">Hire Me</a>
+  </section>
 
-        <button onclick="showMessage()">
-            Click Me
-        </button>
+  <section class="services">
+    <h2>My Services</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Web Design</h3>
+        <p>Creative and modern website designs for your business.</p>
+      </div>
+
+      <div class="card">
+        <h3>Frontend Development</h3>
+        <p>Responsive websites using HTML, CSS, and JavaScript.</p>
+      </div>
+
+      <div class="card">
+        <h3>UI/UX Design</h3>
+        <p>Clean and user-friendly interface designs.</p>
+      </div>
+
     </div>
+  </section>
 
-    <script>
-        function showMessage(){
-            alert("Hello! Button Clicked");
-        }
-    </script>
+  <footer>
+    <p>© 2026 My Portfolio | All Rights Reserved</p>
+  </footer>
 
 </body>
 </html>
