@@ -1,338 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kishore Kumar | Portfolio</title>
 
-    <style>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+    scroll-behavior:smooth;
+}
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family: Arial, sans-serif;
-        }
+body{
+    background:#0f172a;
+    color:white;
+}
 
-        body{
-            background:#f4f4f4;
-            color:#333;
-        }
+/* Navbar */
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:#111827;
+    box-shadow:0 2px 10px rgba(0,0,0,.3);
+}
 
-        header{
-            background:#0f172a;
-            color:white;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            padding:20px 50px;
-        }
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#38bdf8;
+}
 
-        header h1{
-            font-size:30px;
-        }
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    transition:.3s;
+}
 
-        nav a{
-            color:white;
-            text-decoration:none;
-            margin-left:20px;
-            font-size:16px;
-        }
+.nav-links a:hover{
+    color:#38bdf8;
+}
 
-        nav a:hover{
-            color:#38bdf8;
-        }
+/* Hero */
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 8%;
+    gap:40px;
+}
 
-        .hero{
-            height:90vh;
-            background:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085') no-repeat center center/cover;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            flex-direction:column;
-            text-align:center;
-            color:white;
-        }
+.hero-text{
+    flex:1;
+}
 
-        .hero h2{
-            font-size:55px;
-            margin-bottom:15px;
-        }
+.hero-text h1{
+    font-size:65px;
+    color:#38bdf8;
+}
 
-        .hero p{
-            font-size:22px;
-            margin-bottom:25px;
-        }
+.hero-text h2{
+    margin:15px 0;
+    color:#e2e8f0;
+}
 
-        .btn{
-            background:#38bdf8;
-            color:white;
-            padding:12px 25px;
-            text-decoration:none;
-            border-radius:5px;
-            transition:0.3s;
-        }
+.hero-text p{
+    line-height:1.8;
+    margin:20px 0;
+    color:#cbd5e1;
+}
 
-        .btn:hover{
-            background:#0284c7;
-        }
+.buttons{
+    margin-top:25px;
+}
 
-        section{
-            padding:60px 50px;
-        }
+.btn{
+    display:inline-block;
+    padding:14px 30px;
+    background:#38bdf8;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    margin-right:15px;
+    transition:.3s;
+}
 
-        .about{
-            display:flex;
-            align-items:center;
-            gap:40px;
-            flex-wrap:wrap;
-        }
+.btn:hover{
+    transform:translateY(-5px);
+}
 
-        .about img{
-            width:300px;
-            border-radius:10px;
-        }
+.btn2{
+    display:inline-block;
+    padding:14px 30px;
+    border:2px solid #38bdf8;
+    color:#38bdf8;
+    text-decoration:none;
+    border-radius:30px;
+}
 
-        .about-text{
-            flex:1;
-        }
+.hero-image{
+    flex:1;
+    text-align:center;
+}
 
-        .about-text h2{
-            margin-bottom:20px;
-            font-size:35px;
-        }
+.hero-image img{
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    object-fit:cover;
+    border:6px solid #38bdf8;
+}
 
-        .services{
-            text-align:center;
-        }
+/* Sections */
+section{
+    padding:90px 8%;
+}
 
-        .services h2{
-            font-size:35px;
-            margin-bottom:40px;
-        }
+.section-title{
+    text-align:center;
+    font-size:40px;
+    color:#38bdf8;
+    margin-bottom:50px;
+}
 
-        .cards{
-            display:flex;
-            justify-content:center;
-            gap:25px;
-            flex-wrap:wrap;
-        }
+/* About */
+.about p{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    line-height:1.8;
+    color:#cbd5e1;
+}
 
-        .card{
-            background:white;
-            width:300px;
-            padding:20px;
-            border-radius:10px;
-            box-shadow:0 4px 10px rgba(0,0,0,0.1);
-            transition:0.3s;
-        }
+/* Skills */
+.skill{
+    margin-bottom:25px;
+}
 
-        .card:hover{
-            transform:translateY(-10px);
-        }
+.skill span{
+    display:block;
+    margin-bottom:8px;
+}
 
-        .card img{
-            width:100%;
-            border-radius:10px;
-            margin-bottom:15px;
-        }
+.progress{
+    height:12px;
+    background:#1e293b;
+    border-radius:20px;
+}
 
-        .gallery{
-            text-align:center;
-        }
+.progress div{
+    height:100%;
+    background:#38bdf8;
+    border-radius:20px;
+}
 
-        .gallery h2{
-            margin-bottom:30px;
-            font-size:35px;
-        }
+.python{width:90%;}
+.html{width:95%;}
+.css{width:90%;}
+.js{width:80%;}
+.sql{width:85%;}
 
-        .gallery-images{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-            gap:20px;
-        }
+/* Projects */
+.project-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
+}
 
-        .gallery-images img{
-            width:100%;
-            border-radius:10px;
-            height:250px;
-            object-fit:cover;
-        }
+.project-card{
+    background:#1e293b;
+    width:320px;
+    padding:25px;
+    border-radius:15px;
+    transition:.3s;
+}
 
-        .contact{
-            text-align:center;
-            background:white;
-        }
+.project-card:hover{
+    transform:translateY(-10px);
+}
 
-        .contact h2{
-            margin-bottom:20px;
-            font-size:35px;
-        }
+.project-card h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
 
-        input, textarea{
-            width:70%;
-            padding:12px;
-            margin:10px 0;
-            border:1px solid #ccc;
-            border-radius:5px;
-        }
+/* Education */
+.edu-card{
+    background:#1e293b;
+    padding:25px;
+    border-radius:15px;
+    max-width:600px;
+    margin:auto;
+    text-align:center;
+}
 
-        button{
-            padding:12px 25px;
-            border:none;
-            background:#38bdf8;
-            color:white;
-            border-radius:5px;
-            cursor:pointer;
-        }
+/* Contact */
+.contact-form{
+    max-width:700px;
+    margin:auto;
+}
 
-        button:hover{
-            background:#0284c7;
-        }
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    border:none;
+    border-radius:10px;
+    background:#1e293b;
+    color:white;
+}
 
-        footer{
-            background:#0f172a;
-            color:white;
-            text-align:center;
-            padding:20px;
-        }
+.contact-form button{
+    width:100%;
+    padding:15px;
+    background:#38bdf8;
+    border:none;
+    border-radius:10px;
+    color:white;
+    cursor:pointer;
+}
 
-    </style>
+/* Social */
+.social{
+    text-align:center;
+    margin-top:30px;
+}
+
+.social a{
+    color:#38bdf8;
+    text-decoration:none;
+    margin:0 15px;
+    font-size:18px;
+}
+
+/* Footer */
+.footer{
+    background:#111827;
+    text-align:center;
+    padding:25px;
+    margin-top:50px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+.hero{
+    flex-direction:column-reverse;
+    text-align:center;
+    padding-top:40px;
+}
+
+.hero-text h1{
+    font-size:45px;
+}
+
+.navbar{
+    flex-direction:column;
+    gap:15px;
+}
+
+.nav-links{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+}
+</style>
 </head>
 
 <body>
 
-    <header>
-        <h1>My Portfolio</h1>
+<nav class="navbar">
+    <div class="logo">Kishore Kumar</div>
 
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Gallery</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
 
-    <section class="hero">
-        <h2>Hello, I'm Kishore Kumar U</h2>
-        <p>Professional Web Developer & Designer</p>
+<section class="hero" id="home">
 
-        <a href="#" class="btn">View My Work</a>
-    </section>
+    <div class="hero-text">
+        <h1>Kishore Kumar U</h1>
 
-    <section class="about">
+        <h2>Python Full Stack Developer</h2>
 
-        <img src=""C:\Users\Kishore Kumar U\Downloads\WhatsApp Image 2026-05-26 at 3.39.32 PM.jpeg"" alt="Profile Image">
+        <p>
+            Passionate about building AI-powered applications,
+            full-stack web solutions, and software products that solve
+            real-world problems.
+        </p>
 
-        <div class="about-text">
-            <h2>About Me</h2>
+        <div class="buttons">
+            <a href="#" class="btn">Download Resume</a>
+            <a href="#contact" class="btn2">Contact Me</a>
+        </div>
+    </div>
 
-            <p>
-                I am a passionate web developer who creates beautiful,
-                responsive and user-friendly websites using HTML, CSS,
-                JavaScript and modern technologies.
-            </p>
+    <div class="hero-image">
+        <img src="kisho.jpeg" alt="Profile">
+    </div>
 
-            <br>
+</section>
 
-            <p>
-                I love designing creative websites and learning new
-                technologies to improve my skills every day.
-            </p>
+<section class="about" id="about">
+    <h2 class="section-title">About Me</h2>
+
+    <p>
+        I am a BE student with a strong interest in Python Development,
+        Artificial Intelligence, Web Development, and Software Engineering.
+        I enjoy building practical projects that help people and solve
+        real-world challenges through technology.
+    </p>
+</section>
+
+<section id="skills">
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skill">
+        <span>Python</span>
+        <div class="progress"><div class="python"></div></div>
+    </div>
+
+    <div class="skill">
+        <span>HTML</span>
+        <div class="progress"><div class="html"></div></div>
+    </div>
+
+    <div class="skill">
+        <span>CSS</span>
+        <div class="progress"><div class="css"></div></div>
+    </div>
+
+    <div class="skill">
+        <span>JavaScript</span>
+        <div class="progress"><div class="js"></div></div>
+    </div>
+
+    <div class="skill">
+        <span>SQL</span>
+        <div class="progress"><div class="sql"></div></div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="project-container">
+
+        <div class="project-card">
+            <h3>LearnSmart Platform</h3>
+            <p>Personalized learning platform built using Python.</p>
         </div>
 
-    </section>
-
-    <section class="services">
-
-        <h2>My Services</h2>
-
-        <div class="cards">
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f">
-
-                <h3>Web Design</h3>
-
-                <p>
-                    Modern and attractive website designs for businesses.
-                </p>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4">
-
-                <h3>Frontend Development</h3>
-
-                <p>
-                    Responsive websites using HTML, CSS and JavaScript.
-                </p>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
-
-                <h3>UI/UX Design</h3>
-
-                <p>
-                    User-friendly and creative interface designs.
-                </p>
-            </div>
-
+        <div class="project-card">
+            <h3>Internship Assistant System</h3>
+            <p>Desktop application developed using Python and Tkinter.</p>
         </div>
 
-    </section>
-
-    <section class="gallery">
-
-        <h2>Project Gallery</h2>
-
-        <div class="gallery-images">
-
-            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
-
-            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
-
-            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">
-
-            <img src="https://images.unsplash.com/photo-1487014679447-9f8336841d58">
-
+        <div class="project-card">
+            <h3>Object Detection Assistant</h3>
+            <p>AI-powered system assisting visually impaired people.</p>
         </div>
 
-    </section>
+    </div>
+</section>
 
-    <section class="contact">
+<section id="education">
+    <h2 class="section-title">Education</h2>
 
-        <h2>Contact Me</h2>
+    <div class="edu-card">
+        <h3>Bachelor of Engineering</h3>
+        <p>Computer Science / Information Technology</p>
+        <p>2023 - 2027</p>
+    </div>
+</section>
 
-        <input type="text" placeholder="Enter Your Name">
+<section id="contact">
+    <h2 class="section-title">Contact Me</h2>
 
-        <br>
+    <form class="contact-form">
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+    </form>
 
-        <input type="email" placeholder="Enter Your Email">
+    <div class="social">
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Email</a>
+    </div>
+</section>
 
-        <br>
-
-        <textarea rows="5" placeholder="Enter Your Message"></textarea>
-
-        <br>
-
-        <button onclick="showMessage()">Send Message</button>
-
-    </section>
-
-    <footer>
-        <p>© 2026 Professional Portfolio | Designed by Eniya</p>
-    </footer>
-
-    <script>
-
-        function showMessage(){
-            alert("Message Sent Successfully!");
-        }
-
-    </script>
+<footer class="footer">
+    <p>© 2026 Kishore Kumar Portfolio | All Rights Reserved</p>
+</footer>
 
 </body>
 </html>
+```
